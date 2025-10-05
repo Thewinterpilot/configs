@@ -11,9 +11,21 @@
   #ly is a simple, tui display manager with a minimal login screen look
     services.displayManager.ly.enable = true;
 
-  ##battery life tools
-    services.tlp.enable = false;
+  ##battery life tool
+    powerManagement.powertop.enable = true;
+    services.thermald.enable = true;
     services.auto-cpufreq.enable = true;
-  
+      services.auto-cpufreq.settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+        };
+        charger = {
+          governor = "powersave";
+          turbo = "never";
+        };
+      };
+
+
 
 }

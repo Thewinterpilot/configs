@@ -19,9 +19,12 @@
       shellAliases = {
         V = "sudo vim .";
         v = "vim .";
-        c = "clear";
-        cc = "clear; nitch";
-        code = "codium .";
+        vv = "vim";
+        VV = "sudo vim";
+        cl = "clear";
+        cn = "clear; nitch";
+        c = "codium .";
+        cc = "codium";
         rs = "sudo nixos-rebuild switch --impure; bash ~/configs/scripts/update";
         rss = "sudo nixos-rebuild switch --impure";
 	up = "bash ~/configs/scripts/update";

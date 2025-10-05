@@ -59,7 +59,7 @@
     firefox 		        #school browser
   #file explorer
     kdePackages.dolphin
-    yazi
+    vifm
   #discord
     vesktop
   #video viewer

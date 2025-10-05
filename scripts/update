@@ -17,6 +17,7 @@ cp -r --update ~/.config/waypaper ~/configs/dotfiles/
 
 echo pushing to git...
 cd ~/configs
+git branch working
 git add -A
 git commit -a
 git push
