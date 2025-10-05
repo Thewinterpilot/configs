@@ -101,7 +101,12 @@ environment.variables = { EDITOR = "vim"; };
   #keep kernel up to date
     # boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  
+  #enable swap
+    swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16*1024; # 16 GB
+  }];
+
   #Enable networking
     networking.networkmanager.enable = true;
     networking.hostName = "FMS";
@@ -147,6 +152,8 @@ environment.variables = { EDITOR = "vim"; };
 
 
 
+  services.logind.lidSwitch = "hibernate";
+  services.logind.lidSwitchExternalPower = "ignore";
 
 
     networking.firewall.extraCommands = ''iptables -t raw -A OUTPUT -p udp -m udp --dport 137 -j CT --helper netbios-ns    '';
