@@ -54,6 +54,11 @@
     pywalfox-native
     imagemagick
     pywal16
+  #clipboard history
+    cliphist
+    wl-clipboard
+  #idle config
+    hypridle
   #browser
     librewolf           #personal browser
     firefox 		        #school browser
