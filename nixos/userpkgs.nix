@@ -14,6 +14,7 @@
       hyprlock        #lock screen utility
       hyprpicker      #needed for --freeze in hyprshot and a colour picker
       rofi    #app launcher and script dmenu app
+      tofi    #possibly a better app launcher, unsure
 	  ##cli tools
       ##spec fetching utils
           nitch           #search util
@@ -61,8 +62,8 @@
     hypridle
   #browser
     librewolf           #personal browser
-    firefox 		        #school browser
-  #file explorer
+    firefox 		#school browser
+ #file explorer
     kdePackages.dolphin
     vifm
   #discord
