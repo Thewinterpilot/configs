@@ -63,9 +63,10 @@
   #browser
     librewolf           #personal browser
     firefox 		#school browser
- #file explorer
+  #file explorer
     kdePackages.dolphin
-    vifm
+    lf
+    nemo
   #discord
     vesktop
   #video viewer

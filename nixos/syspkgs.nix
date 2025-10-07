@@ -3,7 +3,10 @@
 {  
 
   #set up nerdfonts
-    fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+  fonts.packages = [ 
+    pkgs.nerd-fonts.jetbrains-mono 
+    pkgs.maple-mono.NF 
+  ];
 
   #enabling services
   #hyprland is a dynamic tiling window manager and wayland compositor

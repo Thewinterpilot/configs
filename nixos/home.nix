@@ -60,7 +60,10 @@
       color-scheme = "prefer-dark";
     };};};
 
-
+    wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
+      hyprtrails
+      hyprspace
+    ];
 
 
 

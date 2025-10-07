@@ -1,7 +1,7 @@
 #! /bin/sh
 
 
-chosen=$(ls -t --time=atime ~/configs/walls | rofi -dmenu -font JetBrainsMono Nerd Font 12 -p wallpaper) || exit 0
+chosen=$(ls -t --time=atime ~/configs/walls | rofi -dmenu -p "wallpaper" ) || exit 0
 
 
 wal -i configs/walls/$chosen -t 
