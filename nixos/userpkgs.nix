@@ -79,5 +79,7 @@
     blueberry
   #icon theme
     dracula-icon-theme
- ]);
+  #webapps
+    quick-webapps
+]);
 }

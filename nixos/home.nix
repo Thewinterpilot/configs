@@ -33,7 +33,7 @@
         upgrade = "sudo nixos-rebuild switch --upgrade --impure";
 	hypr = "vim ~/.config/hypr/";
         nd = "cd /etc/nixos/";
-
+        lf = "lf -command 'set hidden!'";
     };
 
   #startup message 

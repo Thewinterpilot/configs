@@ -11,9 +11,12 @@ echo copying .config folders into dotfiles directory...
 cp -r --update ~/.config/alacritty ~/configs/dotfiles/
 cp -r --update ~/.config/mako ~/configs/dotfiles/
 cp -r --update ~/.config/hypr ~/configs/dotfiles/
+cp -r --update ~/.config/tofi ~/configs/dotfiles/
 cp -r --update ~/.config/rofi ~/configs/dotfiles/
 cp -r --update ~/.config/waybar ~/configs/dotfiles/
+cp -r --update ~/.config/lf ~/configs/dotfiles/
 cp -r --update ~/.config/waypaper ~/configs/dotfiles/
+
 
 echo pushing to git...
 cd ~/configs
