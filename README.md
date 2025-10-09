@@ -5,7 +5,7 @@ This is my personal nixos config, it is mainly for note taking, web browsing and
 **I will attempt to keep the main branch stable (no promises tho) but the working branch can be considered unstable and very well may be completely nonfunctional**
 
 this config is now flake based but only so I can use different types of packages (stable or unstable) for different individual packages instead of system wide
-
+it is also now modular so I can run it on different systems with only a few minutes of setup. its nice I like it
 
 
 #### Things I'm using & why

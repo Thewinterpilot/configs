@@ -25,7 +25,7 @@
       brightnessctl
       nix-search-tv
       fzf
-
+      
       ])
    ++
   (with pkgs-unstable; [
@@ -34,7 +34,7 @@
     imagemagick
     pywal16
     quick-webapps
-
+    lazygit
   ]);
 
 
