@@ -17,7 +17,7 @@
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
       username = "winter";
-      name = "winter";
+      name = "FMS";
     in {
       nixosConfigurations = {
         FMS = lib.nixosSystem {
@@ -35,7 +35,7 @@
         winter = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           inherit pkgs-unstable;
-          modules = [ ./home.nix ];
+          modules = [ ./modules/home.nix ];
           extraSpecialArgs = {
             inherit inputs;
             inherit username;
