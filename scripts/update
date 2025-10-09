@@ -2,8 +2,7 @@
 echo copying nixos config files...
 cp --update /etc/nixos/configuration.nix ~/configs/nixos/configuration.nix
 cp --update /etc/nixos/home.nix ~/configs/nixos/home.nix
-cp --update /etc/nixos/syspkgs.nix ~/configs/nixos/syspkgs.nix
-cp --update /etc/nixos/userpkgs.nix ~/configs/nixos/userpkgs.nix
+cp --update /etc/nixos/modules ~/configs/nixos/modules
 cp --update /etc/nixos/flake.nix ~/configs/nixos/flake.nix
 cp --update /etc/nixos/flake.lock ~/configs/nixos/flake.lock
 

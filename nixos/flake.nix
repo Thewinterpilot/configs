@@ -17,7 +17,7 @@
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
       username = "winter";
-      name = "winter";
+      name = "FMS";
     in {
       nixosConfigurations = {
         FMS = lib.nixosSystem {

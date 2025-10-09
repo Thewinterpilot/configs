@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, username, name, ... }:
 
 
 
@@ -6,8 +6,11 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./syspkgs.nix
-      ./userpkgs.nix
+
+
+      ./modules/laptoppkgs.nix
+      ./modules/basepkgs.nix
+
       inputs.home-manager.nixosModules.home-manager
     ];
 
@@ -18,7 +21,7 @@
     home-manager = {
       useUserPackages = true;
       useGlobalPkgs = true;
-      users.winter = import ./home.nix;
+      users.${username} = import ./home.nix;
     };
 
 
@@ -107,7 +110,7 @@ environment.variables = { EDITOR = "vim"; };
 
   #Enable networking
     networking.networkmanager.enable = true;
-    networking.hostName = "FMS";
+    networking.hostName = "${name}";
 
   #auto clean
     system.autoUpgrade.enable = true;
@@ -140,7 +143,7 @@ environment.variables = { EDITOR = "vim"; };
 
   #user
   users.users= {
-    winter = {
+    ${username} = {
       isNormalUser = true;
       description = "main user";
       extraGroups = [ "networkmanager" "wheel" ];
