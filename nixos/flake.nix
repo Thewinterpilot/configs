@@ -20,7 +20,7 @@
       name = "FMS";
     in {
       nixosConfigurations = {
-        FMS = lib.nixosSystem {
+        ${name} = lib.nixosSystem {
           inherit system;
           modules = [ ./configuration.nix ];
           specialArgs = {
@@ -32,7 +32,7 @@
         };
       };
       homeConfigurations = {
-        winter = home-manager.lib.homeManagerConfiguration {
+        ${username} = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           inherit pkgs-unstable;
           modules = [ ./modules/home.nix ];

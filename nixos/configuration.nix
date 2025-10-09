@@ -18,8 +18,22 @@
   #home manager things
     home-manager = {
       useUserPackages = true;
-      useGlobalPkgs = true;
+      useGlobalPkgs = true;{ inputs, config, lib, pkgs, username, name, ... }:
+      
+      
+      
+        hardware.nvidia = {
+          modesetting.enable = true;
+          powerManagement.enable = false;
+          powerManagement.finegrained = false;
+          open = true;
+          nvidiaSettings = true;
+          package = config.boot.kernelPackages.nvidiaPackages.stable;
+        };
+      
+      }
       users.${username} = import ./modules/home.nix;
+
     };
 
 
