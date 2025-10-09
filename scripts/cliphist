@@ -1,0 +1,5 @@
+#! /bin/sh
+
+cliphist list | rofi -dmenu | cliphist decode | wl-copy || exit 0
+
+

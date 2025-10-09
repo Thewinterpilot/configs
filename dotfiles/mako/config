@@ -3,4 +3,4 @@ font= JetBrainsMono 10
 default-timeout= 5000
 max-icon-size=32
 border-radius=3
-anchor=top-center
+anchor=top-right

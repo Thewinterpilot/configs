@@ -1,10 +1,6 @@
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 
-#this is not generally considered the best way to use home manager but hey, it works.
-let 
-
-in 
 
 {
   imports =
@@ -12,16 +8,18 @@ in
       ./hardware-configuration.nix
       ./syspkgs.nix
       ./userpkgs.nix
-      <home-manager/nixos>
+      inputs.home-manager.nixosModules.home-manager
     ];
 
-home-manager.backupFileExtension = "hm-backup";
+
+  #this is needed to be here because idfk it just works like that???
+    home-manager.backupFileExtension = "hm-backup";
   #home manager things
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    users.winter = import ./home.nix;
-  };
+    home-manager = {
+      useUserPackages = true;
+      useGlobalPkgs = true;
+      users.winter = import ./home.nix;
+    };
 
 
   
@@ -125,7 +123,6 @@ environment.variables = { EDITOR = "vim"; };
     
   #unfree packages
     nixpkgs.config.allowUnfree = true;
-
   #locale 
     time.timeZone = "America/Vancouver";
     i18n.defaultLocale = "en_CA.UTF-8";
@@ -142,17 +139,18 @@ environment.variables = { EDITOR = "vim"; };
     };
 
   #user
-    users.users.winter = {
+  users.users= {
+    winter = {
       isNormalUser = true;
       description = "main user";
       extraGroups = [ "networkmanager" "wheel" ];
       
-  };
+  };};
 
 
 
 
-  services.logind.lidSwitch = "hibernate";
+  services.logind.lidSwitch = "sleep";
   services.logind.lidSwitchExternalPower = "ignore";
 
 

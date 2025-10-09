@@ -1,0 +1,71 @@
+
+include=../../.cache/wal/colors-tofi
+
+
+	background-color = #000000da
+
+	font = "JetBrainsMono Nerd Font"
+
+	font-size = 18
+
+	hint-font = true
+
+	text-cursor-style = bar
+
+	prompt-text = "exec = "
+
+	# Extra horizontal padding between prompt and input.
+	prompt-padding = 0
+
+	# Placeholder input text.
+	placeholder-text = ""
+
+	# Maximum number of results to display.
+	# If 0, tofi will draw as many results as it can fit in the window.
+	num-results = 0
+
+	# Spacing between results in pixels. Can be negative.
+	result-spacing = 3
+
+	# List results horizontally.
+	horizontal = false
+
+	# Minimum width of input in horizontal mode.
+	min-input-width = 0
+
+
+# Width of the border in pixels.
+	border-width = 2
+
+# Padding between borders and text. Can be pixels or a percentage.
+	padding-top = 7%
+	padding-bottom = 7%
+	padding-left = 30%
+	padding-right = 200
+
+
+	# Whether to scale the window by the output's scale factor.
+	scale = false
+
+  # Width and height of the window. Can be pixels or a percentage.
+	width = 100%
+	height = 100%
+
+	anchor = center
+
+	exclusive-zone = -1
+
+	hide-cursor = true
+
+	text-cursor = true
+
+	terminal = alacritty
+
+	history = true
+
+	drun-launch = true
+
+	multi-instance = false
+
+	ascii-input = true
+

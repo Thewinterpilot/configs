@@ -9,12 +9,13 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+
       username = "winter";
       name = "winter";
     in {
@@ -23,6 +24,7 @@
           inherit system;
           modules = [ ./configuration.nix ];
           specialArgs = {
+            inherit inputs system;
             inherit username;
             inherit name;
             inherit pkgs-unstable;
@@ -32,8 +34,10 @@
       homeConfigurations = {
         winter = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home.nix ./configuration.nix ];
+          inherit pkgs-unstable;
+          modules = [ ./home.nix ];
           extraSpecialArgs = {
+            inherit inputs;
             inherit username;
             inherit name;
             inherit pkgs;
@@ -41,4 +45,6 @@
         };
       };
     };
-}
+  
+  
+  }
