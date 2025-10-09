@@ -16,7 +16,6 @@ cp -r --update ~/.config/rofi ~/configs/dotfiles/
 cp -r --update ~/.config/waybar ~/configs/dotfiles/
 cp -r --update ~/.config/lf ~/configs/dotfiles/
 cp -r --update ~/.config/btop ~/configs/dotfiles/
-cp -r --update ~/.config/waypaper ~/configs/dotfiles/
 cp -r --update ~/.config/nix-search-tv ~/configs/dotfiles
 
 echo pushing to git...
