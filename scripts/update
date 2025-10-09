@@ -2,9 +2,10 @@
 echo copying nixos config files...
 cp --update /etc/nixos/configuration.nix ~/configs/nixos/configuration.nix
 cp --update /etc/nixos/home.nix ~/configs/nixos/home.nix
-cp --update /etc/nixos/modules ~/configs/nixos/modules
 cp --update /etc/nixos/flake.nix ~/configs/nixos/flake.nix
 cp --update /etc/nixos/flake.lock ~/configs/nixos/flake.lock
+cp -r  --update /etc/nixos/modules ~/configs/nixos
+
 
 echo copying .config folders into dotfiles directory...
 cp -r --update ~/.config/alacritty ~/configs/dotfiles/
@@ -25,6 +26,7 @@ git add -A
 git commit -a
 git push
 cd
-echo please remember to manually copy new important configs to this script update.bash
 
+
+echo please remember to manually copy new important configs to this script update.bash
 echo have a good day winter:3
