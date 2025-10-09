@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 
 chosen=$(ls -t --time=atime ~/configs/walls | rofi -dmenu -p "wallpaper" ) || exit 0

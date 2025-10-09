@@ -25,11 +25,11 @@
         cn = "clear; nitch";
         c = "codium .";
         cc = "codium";
-        rs = "sudo nixos-rebuild switch --impure; bash ~/configs/scripts/update";
+        rs = "sudo nixos-rebuild switch; bash ~/configs/scripts/update";
         rss = "sudo nixos-rebuild switch --impure";
 	up = "bash ~/configs/scripts/update";
         cnx = "codium /etc/nixos/";
-        ss = "nh search ";
+        ss = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}'";
         upgrade = "sudo nixos-rebuild switch --upgrade --impure";
 	hypr = "vim ~/.config/hypr/";
         nd = "cd /etc/nixos/";
@@ -41,6 +41,9 @@
         export PS1='\[\e[3m\]\w\[\e[0m\] >'
       '';
   }; ######THIS IS THE END OF THE PROGRAMS.BASH	SEGMENT
+
+
+
 
 # GTK theming settings
   gtk = {
@@ -56,8 +59,12 @@
   dconf = {
       enable = true;
     settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+      "org/virt-manager/virt-manager/connections" = {
+        autoconnect = ["qemu:///system"];
+        uris = ["qemu:///system"];
     };};};
 
     wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
@@ -67,6 +74,4 @@
 
 
 
- 
 }
-

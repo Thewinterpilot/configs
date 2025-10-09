@@ -1,0 +1,5 @@
+#! /bin/sh
+
+
+
+nix-search-tv print | rofi -dmenu -sort -p "search nixpkgs" -sorting-method fzf | wl-copy || exit 0

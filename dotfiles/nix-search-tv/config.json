@@ -1,0 +1,16 @@
+{
+  
+  "indexes": ["nixpkgs", "home-manager" ],
+  
+  "update_interval": "144h0m0s",
+    
+  "cache_dir": "/home/winter/.cache/nix-search-tv",
+  
+  "enable_waiting_message": true,
+  
+  "experimental": {
+    "render_docs_indexes": {
+      "nvf": "https://notashelf.github.io/nvf/options.html"
+    }
+  }
+}

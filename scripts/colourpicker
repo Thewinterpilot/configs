@@ -1,0 +1,8 @@
+#! /bin/bash
+
+
+chosen=$(hyprpicker) || exit 0
+
+echo $chosen | wl-copy
+
+notify-send copied $chosen -t 1000 -a colourpicker
