@@ -5,9 +5,7 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-
-
+      ./hardware-configs/t480-hardware.nix
       ./modules/laptoppkgs.nix
       ./modules/basepkgs.nix
 
@@ -21,7 +19,7 @@
     home-manager = {
       useUserPackages = true;
       useGlobalPkgs = true;
-      users.${username} = import ./home.nix;
+      users.${username} = import ./modules/home.nix;
     };
 
 

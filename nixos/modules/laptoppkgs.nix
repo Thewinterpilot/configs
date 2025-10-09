@@ -35,6 +35,7 @@
     pywal16
     quick-webapps
     lazygit
+    firefox
   ]);
 
 

@@ -35,7 +35,7 @@
         winter = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           inherit pkgs-unstable;
-          modules = [ ./home.nix ];
+          modules = [ ./modules/home.nix ];
           extraSpecialArgs = {
             inherit inputs;
             inherit username;
