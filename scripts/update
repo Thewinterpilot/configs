@@ -1,10 +1,7 @@
 #!/bin/sh
 echo copying nixos config files...
-cp --update /etc/nixos/configuration.nix ~/configs/nixos/configuration.nix
-cp --update /etc/nixos/home.nix ~/configs/nixos/home.nix
-cp --update /etc/nixos/flake.nix ~/configs/nixos/flake.nix
-cp --update /etc/nixos/flake.lock ~/configs/nixos/flake.lock
-cp -r  --update /etc/nixos/modules ~/configs/nixos
+
+cp -r  --update /etc/nixos ~/configs
 
 
 echo copying .config folders into dotfiles directory...
@@ -16,7 +13,6 @@ cp -r --update ~/.config/rofi ~/configs/dotfiles/
 cp -r --update ~/.config/waybar ~/configs/dotfiles/
 cp -r --update ~/.config/lf ~/configs/dotfiles/
 cp -r --update ~/.config/btop ~/configs/dotfiles/
-cp -r --update ~/.config/waypaper ~/configs/dotfiles/
 cp -r --update ~/.config/nix-search-tv ~/configs/dotfiles
 
 echo pushing to git...

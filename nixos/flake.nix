@@ -15,31 +15,33 @@
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
-
+      editor = "vim";
       username = "winter";
-      name = "FMS";
+      hostname = "FMS";
     in {
       nixosConfigurations = {
-        FMS = lib.nixosSystem {
+        ${hostname} = lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
+          modules = [
+            ./configuration.nix
+          ];
           specialArgs = {
             inherit inputs system;
             inherit username;
-            inherit name;
+            inherit hostname;
             inherit pkgs-unstable;
           };
         };
       };
       homeConfigurations = {
-        winter = home-manager.lib.homeManagerConfiguration {
+        ${username} = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           inherit pkgs-unstable;
           modules = [ ./modules/home.nix ];
           extraSpecialArgs = {
             inherit inputs;
             inherit username;
-            inherit name;
+            inherit hostname;
             inherit pkgs;
           };
         };

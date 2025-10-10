@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, username, name, ... }:
+{ config, pkgs, pkgs-unstable, lib, username, hostname, ... }:
 
 #let
 #  username = winter
@@ -35,7 +35,7 @@
         ss = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}'";
         upgrade = "sudo nixos-rebuild switch --upgrade --impure";
 	hypr = "vim ~/.config/hypr/";
-        nd = "cd /etc/nixos/";
+        nd = "lf /etc/nixos/";
         lf = "lf -command 'set hidden!'";
     };
 
