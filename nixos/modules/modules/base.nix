@@ -5,6 +5,14 @@
 
 {
 
+    #user
+  users.users= {
+    ${username} = {
+      isNormalUser = true;
+      description = "main user";
+      extraGroups = [ "networkmanager" "wheel" ];
+  };};
+  
   #set up nerdfonts
     fonts.packages = [ 
       pkgs.nerd-fonts.jetbrains-mono 
