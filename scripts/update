@@ -1,10 +1,7 @@
 #!/bin/sh
 echo copying nixos config files...
-cp --update /etc/nixos/home.nix ~/configs/nixos/home.nix
-cp --update /etc/nixos/flake.nix ~/configs/nixos/flake.nix
-cp --update /etc/nixos/flake.lock ~/configs/nixos/flake.lock
-cp -r  --update /etc/nixos/modules ~/configs/nixos/modules
-cp -r  --update /etc/nixos/hardware-configs ~/configs/nixos/hardware-configs
+
+cp -r  --update /etc/nixos ~/configs
 
 
 echo copying .config folders into dotfiles directory...

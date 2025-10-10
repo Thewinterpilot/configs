@@ -5,6 +5,14 @@
 
 {
 
+    #user
+  users.users= {
+    ${username} = {
+      isNormalUser = true;
+      description = "main user";
+      extraGroups = [ "networkmanager" "wheel" ];
+  };};
+  
   #set up nerdfonts
     fonts.packages = [ 
       pkgs.nerd-fonts.jetbrains-mono 
@@ -17,7 +25,7 @@
 
 
 
- users.users.${username}.packages = 
+environment.systemPackages = 
   (with pkgs; [
     ## terminal
       alacritty
@@ -75,7 +83,7 @@
       };
               
 
-services = {
+  services = {
     #Enable touchpad support.
       libinput.enable = true;
     #needed for samba shares
