@@ -5,6 +5,8 @@
 
 {
 
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
+
     #user
   users.users= {
     ${username} = {
@@ -12,7 +14,7 @@
       description = "main user";
       extraGroups = [ "networkmanager" "wheel" ];
   };};
-  
+
   #set up nerdfonts
     fonts.packages = [ 
       pkgs.nerd-fonts.jetbrains-mono 

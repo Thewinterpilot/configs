@@ -23,7 +23,9 @@
         ${hostname} = lib.nixosSystem {
           inherit system;
           modules = [
-            ./configuration.nix
+            ./hardware-configs/${hostname}-hw.nix
+            ./modules/base.nix
+            ./modules/laptoppkgs.nix
           ];
           specialArgs = {
             inherit inputs system;
