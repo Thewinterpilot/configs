@@ -17,7 +17,7 @@
 
 
 
- users.users.${username}.packages = 
+environment.systemPackages = 
   (with pkgs; [
     ## terminal
       alacritty
@@ -75,7 +75,7 @@
       };
               
 
-services = {
+  services = {
     #Enable touchpad support.
       libinput.enable = true;
     #needed for samba shares
