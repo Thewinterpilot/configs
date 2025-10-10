@@ -1,3 +1,1 @@
-set delete delete
-
 cmd open $vi $fx

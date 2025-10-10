@@ -63,6 +63,8 @@ environment.systemPackages =
     lf
 
   #other tools
+    #usb tool writer
+      mediawriter
     #discord
       vesktop
     #video viewer

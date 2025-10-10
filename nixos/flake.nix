@@ -25,7 +25,7 @@
           modules = [
             ./hardware-configs/${hostname}-hw.nix
             ./modules/base.nix
-            ./modules/laptoppkgs.nix
+            ./modules/${hostname}-pkgs.nix
           ];
           specialArgs = {
             inherit inputs system;

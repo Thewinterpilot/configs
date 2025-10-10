@@ -1,15 +1,14 @@
 { config, pkgs, pkgs-unstable, lib, username, hostname, ... }:
 
-#let
-#  username = winter
-#in
-
+let
+ username = "winter";
+in
 {
 
 
   #usernames setup
-    home.username = "winter";
-    home.homeDirectory = "/home/winter";
+    home.username = "${username}";
+    home.homeDirectory = "/home/${username}";
     home.stateVersion = "25.05";
     programs.home-manager.enable = true;
 
@@ -37,6 +36,7 @@
 	hypr = "vim ~/.config/hypr/";
         nd = "lf /etc/nixos/";
         lf = "lf -command 'set hidden!'";
+        cf = "bash /home/winter/configs/scripts/confsearch";
     };
 
   #startup message 

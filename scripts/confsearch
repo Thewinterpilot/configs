@@ -1,0 +1,5 @@
+#! /bin/sh
+
+chosen=$(fzf -i +x -e --walker-root=/etc/nixos /home/winter/configs /home/winter/.config)
+
+vim $chosen
