@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, username, name, ... }:
+{ config, pkgs, pkgs-unstable, lib, username, hostname, ... }:
 
 #let
 #  username = winter

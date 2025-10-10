@@ -1,4 +1,4 @@
-{config, lib, pkgs, pkgs-unstable, username, name, ... }:
+{config, lib, pkgs, pkgs-unstable, username, ... }:
 
 {
 services.desktopManager.plasma6.enable = true;

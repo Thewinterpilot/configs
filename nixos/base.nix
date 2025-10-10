@@ -1,44 +1,79 @@
-{ inputs, config, lib, pkgs, username, name, ... }:
+{ inputs, config, pkgs, pkgs-unstable, hostname, username, ... }:
+
 
 
 
 {
-  imports =
-    [
-      ./hardware-configs/t480-hardware.nix
-      ./modules/laptoppkgs.nix
-      ./modules/basepkgs.nix
 
-      inputs.home-manager.nixosModules.home-manager
+  #set up nerdfonts
+    fonts.packages = [ 
+      pkgs.nerd-fonts.jetbrains-mono 
+      pkgs.maple-mono.NF 
     ];
 
-
-  #this is needed to be here because idfk it just works like that???
-    home-manager.backupFileExtension = "hm-backup";
-  #home manager things
-    home-manager = {
-      useUserPackages = true;
-      useGlobalPkgs = true;{ inputs, config, lib, pkgs, username, name, ... }:
-      
-      
-      
-        hardware.nvidia = {
-          modesetting.enable = true;
-          powerManagement.enable = false;
-          powerManagement.finegrained = false;
-          open = true;
-          nvidiaSettings = true;
-          package = config.boot.kernelPackages.nvidiaPackages.stable;
-        };
-      
-      }
-      users.${username} = import ./modules/home.nix;
-
-    };
+   #ly is a simple, tui display manager with a minimal login screen look
+      services.displayManager.ly.enable = true;
 
 
-  
 
+
+ users.users.${username}.packages = 
+  (with pkgs; [
+    ## terminal
+      alacritty
+   ##cli tools
+        nitch
+        btop
+        python3
+        parted
+    ##background things
+      lxqt.lxqt-policykit#permission toolkit for vscode
+      samba cifs-utils
+      killall
+      kdePackages.ark
+      git
+    ##text editors
+      vscodium
+      vim
+      obsidian
+    ])
+   ++
+  (with pkgs-unstable; [
+
+
+  #browser
+    librewolf
+  #file explorers
+    kdePackages.dolphin
+    lf
+
+  #other tools
+    #discord
+      vesktop
+    #video viewer
+      mpv
+    #photo tools
+      loupe
+    #torrent app for legal downloads
+      qbittorrent
+    #bluetooth tool
+      blueberry
+    #icon theme
+      dracula-icon-theme
+]);
+
+
+
+   
+
+    #home manager things
+      home-manager = {
+        backupFileExtension = "hm-backup";
+        useUserPackages = true;
+        useGlobalPkgs = true;
+        users.${username} = import ./home.nix;
+      };
+              
 
 services = {
     #Enable touchpad support.
@@ -59,7 +94,6 @@ services = {
       };
 };
 
-environment.variables = { EDITOR = "vim"; };
 
 
   #enable the polkit for sudo permissions in vscode
@@ -79,6 +113,10 @@ environment.variables = { EDITOR = "vim"; };
         };
     };
   };
+
+
+environment.variables = { EDITOR = "vim"; };
+
 
 #bluetooth
   hardware.bluetooth = {
@@ -122,7 +160,7 @@ environment.variables = { EDITOR = "vim"; };
 
   #Enable networking
     networking.networkmanager.enable = true;
-    networking.hostName = "${name}";
+    networking.hostName = "${hostname}";
 
   #auto clean
     system.autoUpgrade.enable = true;
@@ -134,7 +172,7 @@ environment.variables = { EDITOR = "vim"; };
     };
 
   #enable flakes
-     nix.settings.experimental-features = ["nix-command" "flakes" ];
+    nix.settings.experimental-features = ["nix-command" "flakes" ];
     
   #unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -153,16 +191,6 @@ environment.variables = { EDITOR = "vim"; };
       pulse.enable = true;
     };
 
-  #user
-  users.users= {
-    ${username} = {
-      isNormalUser = true;
-      description = "main user";
-      extraGroups = [ "networkmanager" "wheel" ];
-      
-  };};
-
-
 
 
   services.logind.lidSwitch = "sleep";
@@ -175,5 +203,7 @@ environment.variables = { EDITOR = "vim"; };
  
   #dont change this when you update
     system.stateVersion = "25.05";
+
+
 
 }
