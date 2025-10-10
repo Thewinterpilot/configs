@@ -167,12 +167,6 @@ environment.variables = { EDITOR = "vim"; };
   #keep kernel up to date
     # boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  #enable swap
-    swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 16*1024; # 16 GB
-  }];
-
   #Enable networking
     networking.networkmanager.enable = true;
     networking.hostName = "${hostname}";
