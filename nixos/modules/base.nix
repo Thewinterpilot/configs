@@ -21,9 +21,14 @@
       pkgs.maple-mono.NF 
     ];
 
-   #ly is a simple, tui display manager with a minimal login screen look
-      services.displayManager.ly.enable = true;
 
+
+  
+  services.displayManager = {
+    ly.enable = true;
+	autoLogin.enable = false;
+	autoLogin.user = "${username}";
+  };
 
 
 
