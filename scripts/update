@@ -14,6 +14,7 @@ cp -r --update ~/.config/waybar ~/configs/dotfiles/
 cp -r --update ~/.config/lf ~/configs/dotfiles/
 cp -r --update ~/.config/btop ~/configs/dotfiles/
 cp -r --update ~/.config/nix-search-tv ~/configs/dotfiles
+cp -r --update ~/.config/niri ~/configs/dotfiles
 
 echo pushing to git...
 cd ~/configs

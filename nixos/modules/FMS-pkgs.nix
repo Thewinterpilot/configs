@@ -36,7 +36,8 @@
     brightnessctl
     nix-search-tv
     fzf
-    youtube-tui    
+    youtube-tui
+    xwayland-satellite 
     ])
    ++
   (with pkgs-unstable; [

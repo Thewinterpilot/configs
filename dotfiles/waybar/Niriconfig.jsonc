@@ -1,0 +1,56 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", 
+    "position": "top", 
+    "height": 30, 
+    "spacing": 4, 
+
+    // Choose the order of the modules
+    "modules-left": [
+	"niri/workspaces",
+	"pulseaudio"
+    ],
+    "modules-center": [
+	"niri/window"
+    ],
+
+    "modules-right": [
+	"clock",
+	"battery"
+    ],
+
+    // Modules configurationOnline
+    "niri/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "*"
+        }
+    },
+    "niri/window" : {
+        "max-length": 40,
+        "seperate-outputs": false
+    },
+
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "Mem: {used}GiB"
+    },
+    "disk": {
+        "interval": 60,
+        "path": "/",
+        "format": "Disk: {free}"
+    },
+    "battery": {
+	"format": "󰁹{capacity}%"
+    },
+  "pulseaudio": {
+    "format": "{volume}%"
+
+   }
