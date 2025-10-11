@@ -37,10 +37,10 @@ environment.systemPackages =
     ## terminal
       alacritty
    ##cli tools
-        nitch
-        btop
-        python3
-        parted
+      nitch
+      btop
+      python3
+      parted
     ##background things
       lxqt.lxqt-policykit#permission toolkit for vscode
       samba cifs-utils

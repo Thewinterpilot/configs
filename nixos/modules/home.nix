@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, username, hostname, ... }:
+{ inputs, config, pkgs, pkgs-unstable, lib, username, hostname, ... }:
 
 let
  username = "winter";
@@ -70,10 +70,7 @@ in
         uris = ["qemu:///system"];
     };};};
 
-    wayland.windowManager.hyprland.plugins = with pkgs.hyprlandPlugins; [
-      hyprtrails
-      hyprspace
-    ];
+
 
 
 
