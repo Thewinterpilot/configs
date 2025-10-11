@@ -34,6 +34,7 @@
 
 environment.systemPackages = 
   (with pkgs; [
+  pridecat
     ## terminal
       alacritty
    ##cli tools
@@ -49,6 +50,7 @@ environment.systemPackages =
       git
     ##text editors
       vscodium
+      zed-editor
       vim
       obsidian
     ])

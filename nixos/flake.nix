@@ -25,6 +25,7 @@
           modules = [
             ./hardware-configs/${hostname}-hw.nix
             ./modules/base.nix
+            ./modules/hyprland.nix
             ./modules/${hostname}-pkgs.nix
           ];
           specialArgs = {

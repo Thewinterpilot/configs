@@ -1,1 +1,29 @@
+
+
+
+set ignorecase true
+
+
+cmd mkdir ${{
+    printf "Directory Name: "
+    read ans
+    mkdir $ans
+}}
+
+cmd mkfile ${{
+    printf "New File: "
+    read ans
+    $EDITOR $ans
+}}
+
+
 cmd open $vi $fx
+
+
+
+
+map <enter> open
+
+map F mkfile
+map D mkdir
+

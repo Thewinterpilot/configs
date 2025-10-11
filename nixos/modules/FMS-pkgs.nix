@@ -4,14 +4,10 @@
 { 
   
 
-  #enabling services
-    programs.hyprland = {
-      enable = true;
-      xwayland.enable = true; # Xwayland can be disabled.
-    };
-    programs.niri = {
-        enable = true;
-    };
+
+programs.niri = {
+  enable = true;
+};
     
 
     xdg.portal = {
@@ -22,16 +18,6 @@
   #declaring apps
  users.users.${username}.packages = 
   (with pkgs; [
-    waybar
-    swww
-    pywalfox-native
-    hyprshot
-    hyprlock
-    hyprpicker 
-    rofi
-    tofi 
-    hypridle 
-    mako
     libnotify
     brightnessctl
     nix-search-tv
@@ -41,10 +27,6 @@
     ])
    ++
   (with pkgs-unstable; [
-    cliphist
-    wl-clipboard
-    imagemagick
-    pywal16
     quick-webapps
     firefox
   ]);

@@ -35,28 +35,27 @@ in
         upgrade = "sudo nixos-rebuild switch --upgrade --impure";
 	hypr = "vim ~/.config/hypr/";
         nd = "lf /etc/nixos/";
+        ndd= "cd /etc/nixos/";
         lf = "lf -command 'set hidden!'";
         cf = "bash /home/winter/configs/scripts/confsearch";
     };
 
   #startup message 
-    initExtra = ''
-        export PS1='\[\e[3m\]\w\[\e[0m\] >'
-      '';
-  }; ######THIS IS THE END OF THE PROGRAMS.BASH	SEGMENT
+    initExtra = ''export PS1='\[\e[3m\]\w\[\e[0m\] >' '';
+  };
+
+
+        
 
 
 
-
-# GTK theming settings
-  gtk = {
-    enable = true;
-    #Icon Theme
-    iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
-      # package = pkgs.kdePackages.breeze-icons;
-      # name = "Breeze-Dark";
+  #GTK theming settings
+    gtk = {
+        enable = true;
+        #Icon Theme
+        iconTheme = {
+        package = pkgs.adwaita-icon-theme;
+        name = "Adwaita";
     };};
 
   dconf = {
